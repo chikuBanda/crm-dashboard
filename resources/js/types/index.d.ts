@@ -35,3 +35,22 @@ export interface User {
 }
 
 export type BreadcrumbItemType = BreadcrumbItem;
+
+export interface Quote {
+    budget_max: number
+    budget_min: number
+    company: string
+    created_at: string
+    description: string
+    email: string
+    end_date: string
+    first_name: string
+    id: number
+    last_name: string
+    phone: string
+    position: string
+    product_or_service: string
+    quantity: number
+    start_date: string
+    updated_at: string
+}
