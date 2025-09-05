@@ -3,6 +3,15 @@ import DashboardLayout from '@/layouts/DashboardLayout.vue';
 import { computed, onMounted } from 'vue';
 import { Quote } from '@/types';
 
+// @ts-expect-error import bug
+import CalendarCheckOutline from 'vue-material-design-icons/CalendarCheckOutline.vue'
+// @ts-expect-error import bug
+import EmailOutline from 'vue-material-design-icons/EmailOutline.vue'
+// @ts-expect-error import bug
+import ClipboardTextOutline from 'vue-material-design-icons/ClipboardTextOutline.vue'
+// @ts-expect-error import bug
+import AccountGroupOutline from 'vue-material-design-icons/AccountGroupOutline.vue'
+
 interface QuoteResponse {
     data: Quote | null;
 }
@@ -45,7 +54,10 @@ const quote_object = computed(() => {
                         <div class="card w-full shadow-sm bg-white mb-8">
                             <div class="card-body">
                                 <div class="flex justify-between">
-                                    <div>
+                                    <div class="flex items-center">
+                                        <div class="flex rounded-md h-9 w-9 bg-sky-400/10 justify-center items-center mr-2">
+                                            <calendar-check-outline class="text-sky-700" :size="30"></calendar-check-outline>
+                                        </div>
                                         <p>Task created by Chiku banda</p>
                                     </div>
 
@@ -62,8 +74,9 @@ const quote_object = computed(() => {
                                     <div>
                                         <h4 class="text-lg font-bold text-sky-950 mb-2">Prepare quote for jerome bell
                                         </h4>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus quas, eos
+                                        <p class="mb-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus quas, eos
                                             repellendus iste laudantium ut </p>
+                                        <p class="text-gray-600">@ 12:00 today</p>
                                     </div>
                                 </div>
 
@@ -91,15 +104,73 @@ const quote_object = computed(() => {
                             </div>
                         </div>
 
-                        <div class="card w-full shadow-sm bg-white">
+                        <div class="card w-full shadow-sm bg-white mb-8">
                             <div class="card-body">
                                 <div class="flex justify-between">
-                                    <div>
-                                        <p>Task created by Chiku banda</p>
+                                    <div class="flex items-center">
+                                        <div class="flex rounded-md h-9 w-9 bg-red-400/10 justify-center items-center mr-2">
+                                            <email-outline class="text-red-700" :size="30"></email-outline>
+                                        </div>
+                                        <p>Email sent</p>
+                                    </div>
+
+                                    <!-- <div class="flex">
+                                        <p>Sent</p> &nbsp;
+                                        <p>Today, 12:00 pm</p>
+                                    </div> -->
+                                </div>
+                                <hr>
+                                
+                                <div>
+                                    <h4 class="text-lg font-bold text-sky-950 mb-2">
+                                        You sent an <u>email</u> to the contact
+                                    </h4>
+                                    <p class="mb-2 text-gray-600">@ 12:00 today</p>
+                                </div>
+                                
+                            </div>
+                        </div>
+
+                        <div class="card w-full shadow-sm bg-white mb-8">
+                            <div class="card-body">
+                                <div class="flex justify-between">
+                                    <div class="flex items-center">
+                                        <div class="flex rounded-md h-9 w-9 bg-teal-400/10 justify-center items-center mr-2">
+                                            <clipboard-text-outline class="text-teal-700" :size="30"></clipboard-text-outline>
+                                        </div>
+                                        <p>Note created</p>
+                                    </div>
+
+                                    <!-- <div class="flex">
+                                        <p>Sent</p> &nbsp;
+                                        <p>Today, 12:00 pm</p>
+                                    </div> -->
+                                </div>
+                                <hr>
+                                
+                                <div>
+                                    <h4 class="text-lg font-bold text-sky-950 mb-2">
+                                        You sent added a note
+                                    </h4>
+                                    <p class="mb-2 text-gray-500">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo quas repudiandae laborum corrupti distinctio placeat excepturi omnis recusandae quos doloremque nihil perferendis amet temporibus est, ullam libero eius similique minima.</p>
+                                    <p class="mb-2 text-gray-600">@ 12:00 today</p>
+                                </div>
+                                
+                            </div>
+                        </div>
+
+                        <div class="card w-full shadow-sm bg-white mb-8">
+                            <div class="card-body">
+                                <div class="flex justify-between">
+                                    <div class="flex items-center">
+                                        <div class="flex rounded-md h-9 w-9 bg-violet-400/10 justify-center items-center mr-2">
+                                            <account-group-outline class="text-violet-700" :size="30"></account-group-outline>
+                                        </div>
+                                        <p>Meeting planned</p>
                                     </div>
 
                                     <div class="flex">
-                                        <p>due</p> &nbsp;
+                                        <p>Scheduled at</p> &nbsp;
                                         <p>Today, 12:00 pm</p>
                                     </div>
                                 </div>
@@ -109,10 +180,11 @@ const quote_object = computed(() => {
                                         <div class="h-5 w-5 rounded-full bg-emerald-300/40"></div>
                                     </div>
                                     <div>
-                                        <h4 class="text-lg font-bold text-sky-950 mb-2">Prepare quote for jerome bell
+                                        <h4 class="text-lg font-bold text-sky-950 mb-2">Strategy meeting
                                         </h4>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus quas, eos
+                                        <p class="mb-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus quas, eos
                                             repellendus iste laudantium ut </p>
+                                        <p class="text-gray-600">@ 12:00 today</p>
                                     </div>
                                 </div>
 
