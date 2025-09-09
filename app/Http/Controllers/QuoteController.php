@@ -41,6 +41,15 @@ class QuoteController extends Controller
     {
         return Inertia::render('leads/LeadDetails', ['quote' => new QuoteResource($quote)]);
     }
+    
+
+    /**
+     * Display list resource
+     */
+    public function list()
+    {
+        return Inertia::render('leads/LeadList', ['quotes_list' => Quote::all()->toResourceCollection()]);
+    }
 
     /**
      * Show the form for editing the specified resource.
